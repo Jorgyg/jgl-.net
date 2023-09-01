@@ -10,19 +10,40 @@ namespace Cientifico.Model
     {
         public string DNI { get; set; }
         public string NomApels { get; set; }
+
+        public Cientific(string dni, string nomApels)
+        {
+            DNI = dni;
+            NomApels = nomApels;
+        }
     }
 
     public class Proyecto
     {
-        public string Id { get; set; }
+        private static int contadorId = 1;
+
+        public int Id { get; }
         public string Nombre { get; set; }
         public int Horas { get; set; }
+
+        public Proyecto(string nombre, int horas)
+        {
+            Id = contadorId++;
+            Nombre = nombre;
+            Horas = horas;
+        }
     }
 
     public class AsignadoA
     {
         public string DNI { get; set; }
         public string IdProyecto { get; set; }
+
+        public AsignadoA(string dni, string idProyecto)
+        {
+            DNI = dni;
+            IdProyecto = idProyecto;
+        }
     }
 
 

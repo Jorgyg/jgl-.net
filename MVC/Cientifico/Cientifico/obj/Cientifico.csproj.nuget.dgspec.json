@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc\\source\\repos\\jgl-.net\\Cientifico\\Cientifico\\Cientifico.csproj": {}
+    "C:\\Users\\pc\\source\\repos\\jgl-.net\\MVC\\Cientifico\\Cientifico\\Cientifico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc\\source\\repos\\jgl-.net\\Cientifico\\Cientifico\\Cientifico.csproj": {
+    "C:\\Users\\pc\\source\\repos\\jgl-.net\\MVC\\Cientifico\\Cientifico\\Cientifico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc\\source\\repos\\jgl-.net\\Cientifico\\Cientifico\\Cientifico.csproj",
+        "projectUniqueName": "C:\\Users\\pc\\source\\repos\\jgl-.net\\MVC\\Cientifico\\Cientifico\\Cientifico.csproj",
         "projectName": "Cientifico",
-        "projectPath": "C:\\Users\\pc\\source\\repos\\jgl-.net\\Cientifico\\Cientifico\\Cientifico.csproj",
+        "projectPath": "C:\\Users\\pc\\source\\repos\\jgl-.net\\MVC\\Cientifico\\Cientifico\\Cientifico.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc\\source\\repos\\jgl-.net\\Cientifico\\Cientifico\\obj\\",
+        "outputPath": "C:\\Users\\pc\\source\\repos\\jgl-.net\\MVC\\Cientifico\\Cientifico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

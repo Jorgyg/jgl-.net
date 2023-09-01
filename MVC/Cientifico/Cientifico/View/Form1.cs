@@ -10,7 +10,7 @@ namespace Cientifico
     {
         private CientificoController cientificoController;
         private ProyectoController proyectoController;
-        private AsignadoAController asignadoAController;
+        private AsignacionController asignacionController;
 
         public Form1()
         {
@@ -19,73 +19,68 @@ namespace Cientifico
             // Inicializar los controladores
             cientificoController = new CientificoController();
             proyectoController = new ProyectoController();
-            asignadoAController = new AsignadoAController();
+            asignacionController = new AsignacionController();
 
             CargarDatos();
         }
 
         private void CargarDatos()
         {
+            // Cargar datos de científicos, proyectos y asignaciones en los DataGridView
             List<Cientific> cientificos = cientificoController.ObtenerCientificos();
             List<Proyecto> proyectos = proyectoController.ObtenerProyectos();
+            List<AsignadoA> asignaciones = asignacionController.ObtenerAsignaciones();
 
-            // Cargar los datos en los DataGridView
             dgvCientificos.DataSource = cientificos;
             dgvProyectos.DataSource = proyectos;
+            dgvAsignaciones.DataSource = asignaciones;
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            if (dgvCientificos.SelectedRows.Count > 0 && dgvProyectos.SelectedRows.Count > 0)
-            {
-                string dni = dgvCientificos.SelectedRows[0].Cells["DNI"].Value.ToString();
-                string idProyecto = dgvProyectos.SelectedRows[0].Cells["Id"].Value.ToString();
 
-                asignadoAController.AgregarAsignacion(new AsignadoA(dni, idProyecto));
-                CargarDatos();
-            }
-        }
+            string dni = dgvCientificos.SelectedRows[0].Cells["DNI"].Value.ToString();
+            string idProyecto = dgvProyectos.SelectedRows[0].Cells["Id"].Value.ToString();
 
-        private void btnCrearCientifico_Click(object sender, EventArgs e)
-        {
-
-            using (FormCrearCientifico formCrearCientifico = new FormCrearCientifico())
-            {
-                DialogResult result = formCrearCientifico.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    Cientific nuevoCientifico = formCrearCientifico.CientificoCreado;
-                    cientificoController.AgregarCientifico(nuevoCientifico);
-                    CargarDatos();
-                }
-            }
-        }
-
-        private void btnCrearProyecto_Click(object sender, EventArgs e)
-        {
-            using (FormCrearProyecto formCrearProyecto = new FormCrearProyecto())
-            {
-                DialogResult result = formCrearProyecto.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    Proyecto nuevoProyecto = formCrearProyecto.ProyectoCreado;
-                    proyectoController.AgregarProyecto(nuevoProyecto);
-                    CargarDatos();
-                }
-            }
+            asignacionController.AgregarAsignacion(new AsignadoA(dni, idProyecto));
+            CargarDatos();
         }
 
         private void btnEliminarAsignacion_Click(object sender, EventArgs e)
         {
-            if (dgvAsignaciones.SelectedRows.Count > 0)
-            {
-                string dni = dgvAsignaciones.SelectedRows[0].Cells["DNI"].Value.ToString();
-                string idProyecto = dgvAsignaciones.SelectedRows[0].Cells["IdProyecto"].Value.ToString();
+            string dni = dgvCientificos.SelectedRows[0].Cells["DNI"].Value.ToString();
+            string idProyecto = dgvProyectos.SelectedRows[0].Cells["Id"].Value.ToString();
 
-                asignadoAController.EliminarAsignacion(dni, idProyecto);
+            // Eliminar la asignación
+            asignacionController.EliminarAsignacion(dni, idProyecto);
+            CargarDatos();
+        }
+
+        private void btnCrearCientifico_Click(object sender, EventArgs e)
+        {
+            string dni = txtNuevoCientifico.Text;
+            string nombre = textBox1.Text;
+
+            // Crear un nuevo científico
+            Cientific cientifico = new Cientific(dni, nombre);
+            cientificoController.AgregarCientifico(cientifico);
+            CargarDatos();
+        }
+
+        private void btnCrearProyecto_Click(object sender, EventArgs e)
+        {
+            string nombreProyecto = textBox2.Text;
+            int horasProyecto;
+
+            if (int.TryParse(textBox3.Text, out horasProyecto))
+            {
+                Proyecto proyecto = new Proyecto(nombreProyecto, horasProyecto);
+                proyectoController.AgregarProyecto(proyecto);
                 CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un valor válido para las horas del proyecto.");
             }
         }
     }
