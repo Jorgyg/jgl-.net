@@ -1,7 +1,0 @@
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.csproj.AssemblyReference.cache
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.AssemblyInfoInputs.cache
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.AssemblyInfo.cs
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.csproj.CoreCompileInputs.cache
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pc\source\repos\jgl-.net\UD35\Ex1\Ex1\obj\Debug\net6.0\Ex1.MvcApplicationPartsAssemblyInfo.cache
